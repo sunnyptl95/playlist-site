@@ -115,6 +115,33 @@ header:hover {
     0 0 30px #7ff895;
 }
 
+    .animated-text {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.animated-text span {
+  display: inline-block;
+  padding-left: 100%;  /* start outside left */
+  animation: slideRight 12s linear infinite;
+  font-size: 16px;
+  color: #1db954;
+  text-shadow: 0 0 5px #1db954, 0 0 10px #1db954;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
 
   </style>
 </head>
@@ -198,6 +225,7 @@ header:hover {
 </footer>
 </body>
 </html>
+
 
 
 
