@@ -2,169 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="mystyle.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #1db954, #191414);
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      text-align: center;
-      padding: 20px;
-      font-size: 24px;
-      font-weight: bold;
-      background: #000;
-    }
-    #searchBar {
-      display: block;
-      margin: 20px auto;
-      padding: 10px;
-      width: 80%;
-      max-width: 400px;
-      border-radius: 8px;
-      border: none;
-      font-size: 16px;
-    }
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-    .card {
-      background: #222;
-      border-radius: 12px;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-      transition: transform 0.2s;
-    }
-    .card:hover {
-      transform: scale(1.03);
-    }
-    iframe {
-      width: 100%;
-      height: 200px;
-      border-radius: 8px;
-      border: none;
-    }
-    h3 {
-      margin: 10px 0;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #000;
-      font-size: 14px;
-      color: #aaa;
-    }
-    footer a {
-      color: #1db954;
-      text-decoration: none;
-      margin: 0 10px;
-      font-size: 18px;
-    }
-    footer a:hover {
-      color: white;
-    }
-
-    .developer {
-  margin-top: 40px;
-  padding: 15px;
-  background: #222;
-  border-radius: 10px;
-  color: #ccc;
-  font-size: 14px;
-  text-align: center;
-}
-
-.developer h3 {
-  color: #1db954;
-  margin: 10px 0 8px 0;
-}
-
-.dev-pic {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 3px solid #1db954;
-  margin-bottom: 10px;
-}
-
-header {
-  text-align: center;
-  padding: 20px;
-  font-size: 28px;
-  font-weight: bold;
-  background: #000;
-  color: #1db954;
-  transition: text-shadow 0.3s ease-in-out;
-}
-
-header:hover {
-  text-shadow: 
-    0 0 10px #8af8ab,
-    0 0 20px #2bff72,
-    0 0 30px #7ff895;
-}
-
-    .animated-text {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  box-sizing: border-box;
-  text-align: center;
-  margin-top: 15px;
-}
-
-.animated-text span {
-  display: inline-block;
-  padding-left: 100%;  /* start outside left */
-  animation: slideRight 14s linear infinite;
-  font-size: 16px;
-  color: #ffffff;
-  text-shadow: 0 0 2px #fefffe, 0 0 6px #1db954;
-}
-
-@keyframes slideRight {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(100%);
-  }
-}
-
-    .float-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  background: #1db954;
-  color: #000;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 60px;
-  font-size: 28px;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  transition: transform 0.2s, box-shadow 0.2s;
-  z-index: 9999;
-}
-
-.float-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
-  background: #1ed760;
-}
-
-
-  </style>
 </head>
+
 <body>
   <header><b>🎵 WibeMix Playlists</b></header>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2092327345324888"
@@ -172,61 +13,96 @@ header:hover {
   <!-- Search Bar -->
   <input type="text" id="searchBar" placeholder="Search playlists...">
   <div class="animated-text">
-  <span><b>!! Add your own playlist contact developer !!</a></span>
-</div>
+    <span><b>!! Add your own playlist contact developer !!</a></span>
+  </div>
+
+    <!-- Category Buttons -->
+  <div class="category-buttons">
+    <button onclick="showCategory('spotifyCategory' ,'youtubeCategory')">All</button>
+    <button onclick="showCategory('spotifyCategory')">Spotify</button>
+    <button onclick="showCategory('youtubeCategory')">YouTube</button>
+  </div>
+
   <div class="container" id="playlistContainer">
+
+    <!-- Spotify -->
+    <div class="container  category" id="spotifyCategory">
+
+      <div class="card" data-title="chill vibes relax">
+        <h3>Chill Vibes</h3>
+        <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4WYpdgoIcn6" 
+        allow="encrypted-media"></iframe>
+      </div>
     
-    <div class="card" data-title="chill vibes relax">
-      <h3>Chill Vibes</h3>
-      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4WYpdgoIcn6" allow="encrypted-media"></iframe>
+      <div class="card" data-title="bollywood top 50 hits">
+        <h3>Bollywood Top 50</h3>
+        <iframe src="https://open.spotify.com/embed/playlist/4nNVfQ9eWidZXkBKZN5li4" 
+        allow="encrypted-media" title="Bollywood Top 50"></iframe>
+      </div>
+    
+      <div class="card" data-title="bollywood central songs">
+        <h3>Bollywood Central</h3>
+        <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWXtlo6ENS92N" 
+        allow="encrypted-media" title="Bollywood Central"></iframe>
+      </div>
+    
+      <div class="card" data-title="top 50 india tracks">
+        <h3>Top 50 – India</h3>
+        <iframe src="https://open.spotify.com/embed/playlist/37i9dQZEVXbLZ52XmnySJg" 
+        allow="encrypted-media" title="Top 50 India"></iframe>
+      </div>
+    
+      <div class="card" data-title="rock classics guitar">
+        <h3>Rock Anthems</h3>
+        <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWXRqgorJj26U" 
+        allow="encrypted-media"></iframe>
+      </div>
+    
+      <div class="card" data-title="jazz classics">
+        <h3>Jazz Classics</h3>
+        <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXbITWG1ZJKYt" 
+        allow="encrypted-media"></iframe>
+      </div>
+    
+      <div class="card" data-title="old is gold">
+        <h3>old is gold</h3>
+        <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWYRTlrhMB12D" 
+        allow="encrypted-media"></iframe>
+      </div>
+    
+        <div class="card" data-title="i pop party">
+          <h3>i pop party</h3>
+          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX2CqFedmO3RP" 
+          allow="encrypted-media"></iframe>
+        </div>
+
+        <div class="card" data-title="party mix">
+          <h3>party mix</h3>
+          <iframe src="https://open.spotify.com/embed/playlist/0h85G8NnKnVED5rVq6mM68" 
+          allow="encrypted-media"></iframe>
+        </div>
     </div>
+    
 
-<!-- Bollywood Top 50 -->
-<div class="card" data-title="bollywood top 50 hits">
-  <h3>Bollywood Top 50</h3>
-  <iframe src="https://open.spotify.com/embed/playlist/4nNVfQ9eWidZXkBKZN5li4" allow="encrypted-media" title="Bollywood Top 50"></iframe>
-</div>
+    <!-- Youtube -->
+    <div class="container  category" id="youtubeCategory">
 
-<!-- Bollywood Central -->
-<div class="card" data-title="bollywood central songs">
-  <h3>Bollywood Central</h3>
-  <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWXtlo6ENS92N" allow="encrypted-media" title="Bollywood Central"></iframe>
-</div>
-
-<!-- Top 50 India -->
-<div class="card" data-title="top 50 india tracks">
-  <h3>Top 50 – India</h3>
-  <iframe src="https://open.spotify.com/embed/playlist/37i9dQZEVXbLZ52XmnySJg" allow="encrypted-media" title="Top 50 India"></iframe>
-</div>
-
-    <div class="card" data-title="rock classics guitar">
-      <h3>Rock Anthems</h3>
-      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWXRqgorJj26U" allow="encrypted-media"></iframe>
+      <div class="card" data-title="late night chill">
+        <h3>late night chill</h3>
+        <iframe src="https://www.youtube.com/embed/m70d24MiCPA?si=96Z-roBkgdqOkHzu&amp;start=240" 
+        title="YouTube video player" allow="encrypted-media"></iframe>
+      </div>
+      
+      <div class="card" data-title="long drive bollywood mix">
+        <h3>long drive bollywood mix</h3>
+        <iframe src="https://www.youtube.com/embed/00DvaPstcpo?si=beDnXblvWHKhNAvw&amp;start=600" 
+        title="YouTube video player" allow="encrypted-media"></iframe>
+      </div>
     </div>
-
-    <div class="card" data-title="jazz classics">
-      <h3>Jazz Classics</h3>
-      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXbITWG1ZJKYt" allow="encrypted-media"></iframe>
-    </div>
-
-    <div class="card" data-title="old is gold">
-      <h3>old is gold</h3>
-      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWYRTlrhMB12D" allow="encrypted-media"></iframe>
-    </div>
-
-    <div class="card" data-title="i pop party">
-      <h3>i pop party</h3>
-      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX2CqFedmO3RP" allow="encrypted-media"></iframe>
-    </div>
-
-    <div class="card" data-title="party mix">
-      <h3>party mix</h3>
-      <iframe src="https://open.spotify.com/embed/playlist/0h85G8NnKnVED5rVq6mM68" allow="encrypted-media"></iframe>
-    </div>
-     
 
   </div>
 
+  <!-- Script -->
   <script>
     const searchBar = document.getElementById("searchBar");
     const cards = document.querySelectorAll(".card");
@@ -242,12 +118,30 @@ header:hover {
         }
       });
     });
+
+    function showCategory(categoryId) {
+    // find category container
+    const category = document.getElementById(categoryId);
+    if (!category) return;
+
+    // move its children (cards) to top of main playlistContainer
+    const items = Array.from(category.children);
+    items.forEach(item => {
+      playlistContainer.insertBefore(item, playlistContainer.firstChild);
+    });
+
+    // highlight selected button
+    document.querySelectorAll(".category-buttons button").forEach(btn => {
+      btn.classList.remove("active");
+    });
+    document.querySelector(`[onclick="showCategory('${categoryId}')"]`).classList.add("active");
+   }
   </script>
 
 <footer id=footer>
   <div class="developer">
     <img src="images/TeaMan.jpg" alt="Developer" class="dev-pic">
-    <p>A web developer passionate about music & coding 🎶</p>
+    <p> A web developer passionate about music & coding 🎶</p>
 
   <a href="https://www.instagram.com/magician._man?igsh=MXQ1ZTBiZW1udGVhNA==" target="_blank">🐦 Instagram</a>
   <a href="https://github.com/sunnyptl95" target="_blank">💻 Github</a>
@@ -265,7 +159,5 @@ header:hover {
 </body>
   
 </html>
-
-
 
 
